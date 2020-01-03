@@ -1,0 +1,26 @@
+# pipeline 依赖的 docker 镜像
+image: docker-reg.basebit.me:5000/service/:latest
+variables:
+  IMAGE_NAME: nlp-seg
+  VERSION: 2.0.0
+
+before_script:
+ - whoami
+ - echo "I am in before_script"
+after_script:
+ - echo "I am in after_script"
+# 本次pipeline的stages
+stages:
+ - production
+# 部署生成环境镜像
+
+deploy_nlp_seg:
+   image: docker-reg.basebit.me:5000/base/docker:latest
+   stage: production
+   only:
+    - tagging-dev
+   script:
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ./id_rsa
+    - docker build -f Dockerfile -t docker-reg.basebit.me:5000/service/"${IMAGE_NAME}":"${VERSION}" .
+    - docker push docker-reg.basebit.me:5000/service/"${IMAGE_NAME}":"${VERSION}"
+   when: manual
