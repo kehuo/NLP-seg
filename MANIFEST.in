@@ -1,0 +1,18 @@
+# med_parser
+include med_parser/*.h5
+include med_parser/*.txt
+include med_parser/*.so
+
+# med_tagger
+include med_tagger/*.h5
+include med_tagger/*.txt
+include med_tagger/*.so
+
+# prep
+include prep/*.so
+
+# post
+include post/*.so
+
+# model
+include model/*.so
