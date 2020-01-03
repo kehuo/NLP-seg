@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# encoding=utf8
 import re
 import pickle
 import base64

@@ -11,4 +11,3 @@ opentracing==2.2.0
 pycrypto==2.6.1
 gunicorn==19.4.5
 gevent==1.3.7
-git+ssh://git@172.18.0.108/DEV/bb_logger_py.git
