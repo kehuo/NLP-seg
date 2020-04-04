@@ -13,5 +13,5 @@ nlp_seg/__pycache__/
 nlp_seg/app/__pycache__/
 
 # data/backupvectos.txt and data/model/vectors.txt are too large, so do not upload to git
-data/backup/vectos.txt
-data/model/vectos.txt
+nlp_seg/data/backup/vectos.txt
+nlp_seg/data/model/vectos.txt
