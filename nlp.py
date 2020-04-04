@@ -55,6 +55,7 @@ def api_server(params):
     run_server(params)
     return
 
+
 def inference(params):
     model_path = params['model_path']
     run_type = params['run_type']
@@ -83,7 +84,7 @@ func_map = {
 def main():
     params = init_params()
     run_type = params['run_type']
-
+    print(run_type)
     func = func_map.get(run_type, None)
     if func is None:
         print('run_type miss match [train/evaluation/service]')

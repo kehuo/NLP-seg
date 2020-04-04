@@ -4,6 +4,7 @@ import json
 import codecs
 import numpy as np
 
+
 class NLPConfig(object):
     def __init__(self, cfg, model_path):
         self.embed_dim = cfg['EMBED_DIM']
@@ -44,6 +45,7 @@ class NLPConfig(object):
                 word = ' '
                 coefs = np.asarray(values[0:], dtype='float32')
             else:
+                # 如果 vectors.txt 中, 某一行开头是空格(不是任何有效的字或者数字或者符号), 则 values[0] 就会报错 IndexError.
                 word = values[0]
                 coefs = np.asarray(values[1:], dtype='float32')
             embeddings[word] = coefs
