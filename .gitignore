@@ -2,4 +2,11 @@
 venv/
 .idea/
 
+logs/
+
 nlp_seg/data/corpus/
+
+__pycache__/
+nlp_seg/model/__pycache__/
+nlp_seg/common/__pycache__/
+nlp_seg/__pycache__/
